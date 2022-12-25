@@ -1,0 +1,41 @@
+{
+    "TestCase": "remoteservice_app_enable",
+    "TestSteps": {
+        "1_SendCommand": {
+            "Action" : "sldd om set 4",
+            "Log": {
+                "1" : "abc",
+                "2" : "abc",
+                "3" : "abc"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "2_Waiting":{
+            "Action" : "5",
+            "Log": {
+                "1" : "abc",
+                "2" : "abc",
+                "3" : "abc"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "3_SendCommand": {
+            "Action" : "sldd am enable_app remoteservice",
+            "Log": {
+                "1" : "abc",
+                "2" : "abc",
+                "3" : "abc"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        }
+    },
+    "Exceptions": {
+        "Log" : {}
+    }
+}

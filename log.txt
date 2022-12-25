@@ -1,0 +1,362 @@
+--------- beginning of main
+12-16 06:18:35.751  1001  1712 V CTH     : TXhandleMessage TX_TIME_TO_KICK_DOG
+12-16 06:18:37.818  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 17 00 0A 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:18:37.909   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:18:37.909   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:18:37.909   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:18:37.909   988  1686 E SPIClient_can: CB_2
+12-16 06:18:39.632  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
+12-16 06:18:39.692  9245  9245 V ProcessState: Spawning new pooled thread, name=Binder_1
+12-16 06:18:39.693  9245  9265 V ProcessState: Spawning new pooled thread, name=Binder_2
+12-16 06:18:39.693  9245  9245 I sldd    : command : argv:rvm
+12-16 06:18:39.693  9245  9245 V sldd_rvm_app: getApplicationManagerInterface
+12-16 06:18:39.694  1003  1566 V AppManager: onSendPost, dest = rvm
+12-16 06:18:39.694  9245  9245 I sldd_cmd: rvm sendFakePM 7 
+--------- beginning of system
+12-16 06:18:39.694 23485 23485 E APP     : [onPostReceived] onPostReceived 50, 7
+12-16 06:18:39.694 23485 23485 D RVM_App : [onPostReceived:699] onPostReceived 50, 7
+12-16 06:18:40.051  9296  9296 V ProcessState: Spawning new pooled thread, name=Binder_1
+12-16 06:18:40.052  9296  9296 I sldd    : command : argv:rvm
+12-16 06:18:40.052  9296  9313 V ProcessState: Spawning new pooled thread, name=Binder_2
+12-16 06:18:40.053  9296  9296 V sldd_rvm_app: getApplicationManagerInterface
+12-16 06:18:40.053  1003  1566 V AppManager: onSendPost, dest = rvm
+12-16 06:18:40.053  9296  9296 I sldd_cmd: rvm sendFakePS 2 
+12-16 06:18:40.053 23485 23485 E APP     : [onPostReceived] onPostReceived 70, 2
+12-16 06:18:40.053 23485 23485 D RVM_App : [onPostReceived:699] onPostReceived 70, 2
+12-16 06:18:40.386  9341  9341 V ProcessState: Spawning new pooled thread, name=Binder_1
+12-16 06:18:40.386  9341  9358 V ProcessState: Spawning new pooled thread, name=Binder_2
+12-16 06:18:40.388  9341  9341 I sldd    : command : argv:rvm
+12-16 06:18:40.388  9341  9341 V sldd_rvm_app: getApplicationManagerInterface
+12-16 06:18:40.389  1003  1566 V AppManager: onSendPost, dest = rvm
+12-16 06:18:40.389  9341  9341 I sldd_cmd: rvm sendFakeSVTState 2 
+12-16 06:18:40.395 23485 23485 E APP     : [onPostReceived] onPostReceived 1, 2
+12-16 06:18:40.396 23485 23485 D RVM_App : [onPostReceived:699] onPostReceived 1, 2
+12-16 06:18:40.396 23485 23514 E APP     : [onReceiveFromSVT] Received Post Message of SVT Status,APPID = 1, SVTStatus = 2
+12-16 06:18:40.396 23485 23514 D RVM_Main: [onReceiveFromSVT:1241] Received Post Message of SVT Status,APPID = 1, SVTStatus = 2
+12-16 06:18:40.396   995  1539 I ConfigDbClient: ReadKv, Key:0x506ece40, token[477]
+12-16 06:18:40.396   995  1539 I CSE_ConfigDb: received msg from teleVM:3 0x506ece40, token:477
+12-16 06:18:40.399   995  1508 I CSE_ConfigDb: CONFIGDB_CB_CMD_READ_KV
+12-16 06:18:40.402   995  1539 I ConfigDbClient: == wait for ReqKey:0x506ece40, Req token[477]
+12-16 06:18:40.402   995  1539 I ConfigDbClient: ==> [Req:Resp] table[lcf_table_remote] key[0x506ece40:0x506ece40], value[0], token[477:477]
+12-16 06:18:40.402   996  1525 I <VSM>VehicleStatusManagerService: Query kvDB (AppModeSVT)[lcf_table_remote:0x506ece40] success. value(0)
+12-16 06:18:40.402   995  1508 I CSE_ConfigDb: read_data_db[lcf_table_remote] : key:0x506ece40 value:0 status:0 CseEr_GetErrorCode:0 sql_status:0 token:477
+12-16 06:18:40.402 23485 23514 E APP     : [onReceiveFromSVT] RVM application is disabled by SVT Activation
+12-16 06:18:40.402 23485 23514 D RVM_Main: [onReceiveFromSVT:1271] RVM application is disabled by SVT Activation
+12-16 06:18:40.402 23485 23514 V RVM_NS  : [IsEmpty:161] RVM_NGTPMessageQueue: isEmpty 
+12-16 06:18:40.402 23485 23514 V RVM_NS  : [SaveQueueToFile:325] RVM_NGTPMessageQueue:SaveQueueToFile !
+12-16 06:18:40.402 23485 23514 V RVM_NS  : [saveQueueData:249] RVM_NGTPMessageQueue:saveQueueData_Start
+12-16 06:18:40.402 23485 23514 V         : FileStore delete_file
+12-16 06:18:40.440 23485 23514 V         : FileStore delete_file [/data/apps/rvm/RVM_NGTP_Messsage_Queue.dat][0/500]
+12-16 06:18:40.440 23485 23514 V RVM_NS  : [IsEmpty:161] RVM_NGTPMessageQueue: isEmpty 
+12-16 06:18:40.440 23485 23514 V RVM_NS  : [saveQueueData:269] Save File Data is NULL !
+12-16 06:18:40.821  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 17 00 0A 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:18:40.862   991  1368 I LocationServer: droutput:lat:0.000000,lon:0.000000,alt:0.000000
+12-16 06:18:41.744  1581  1679 I DiagReadDTCHandler: checkFaultSettingCondition[false] PM[0] Vol[12.110000] bubTemp [36]
+12-16 06:18:42.518  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[04, 00] Cmd[D1, 00] PayloadLen[0006] Payload[16 0C 10 06 12 29]
+12-16 06:18:42.519  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x4], subcate[x0], cmd[209], cmd2[x0]
+12-16 06:18:42.519  1578  1673 V FactoryUtil: onReceive MCU param[x02][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x12][x29]...
+12-16 06:18:42.519  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x04][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x12][x29]...
+12-16 06:18:42.519  1578  1671 V FactoryEdu: procEduResCommand cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:18:42.519  1578  1671 V FactoryUtil: Res Buffer  bufSize[6]
+12-16 06:18:42.519  1578  1671 V FactoryUtil: [x16][x0C][x10][x06][x12][x29]
+12-16 06:18:42.519  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:18:42.917   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:18:42.917   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:18:42.917   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:18:42.917   988  1686 E SPIClient_can: CB_2
+12-16 06:18:43.595  1004  1556 E CM_SPI  : MSM->MCU Type[01] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:18:43.602  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:18:43.602  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x1], subcate[x0], cmd[17], cmd2[x0]
+12-16 06:18:43.602  1578  1673 V FactoryUtil: onReceive MCU param[x02][x11][x00], buf is NULL
+12-16 06:18:43.603  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x01][x11][x00], buf is NULL
+12-16 06:18:43.603  1578  1671 V FactoryEdu: procEduResCommand cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:18:43.603  1578  1671 V FactoryUtil: Res Buffer  buf is NULL
+12-16 06:18:43.603  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:18:43.818  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 17 00 09 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:18:44.965  1004  1546 E CommunicationManagerService: KICK DOG(356)
+12-16 06:18:45.576  1581  9968 I DiagManagerService: onWatchDog Kick
+12-16 06:18:45.577  1575  9969 V DebugManagerServiceImpl: DEBUG_IMPL_KICK_DOG
+12-16 06:18:45.692  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, 22] Cmd[02, 00] PayloadLen[000A] Payload[D9 9E 00 00 00 11 00 00 00 2B]
+12-16 06:18:45.750  1001  1709 V CRH     : RX_TIME_TO_KICK_DOG
+12-16 06:18:45.751  1001  1572 V CANManagerService: perform HeartBeat()
+12-16 06:18:45.751  1001  1712 V CTH     : TXhandleMessage TX_TIME_TO_KICK_DOG
+12-16 06:18:46.214  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
+12-16 06:18:46.820  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 17 00 08 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:18:47.929   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:18:47.929   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:18:47.930   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:18:47.930   988  1686 E SPIClient_can: CB_2
+12-16 06:18:49.818  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 09 08 57 00 00 00 01 00 01 00 01 00 01 00 02]
+12-16 06:18:50.862   991  1368 I LocationServer: droutput:lat:0.000000,lon:0.000000,alt:0.000000
+12-16 06:18:51.745  1581  1679 I DiagReadDTCHandler: checkFaultSettingCondition[false] PM[0] Vol[12.110000] bubTemp [36]
+12-16 06:18:52.814  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
+12-16 06:18:52.820  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 09 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:18:52.937   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:18:52.937   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:18:52.938   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:18:52.938   988  1686 E SPIClient_can: CB_2
+12-16 06:18:53.117  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[04, 00] Cmd[D1, 00] PayloadLen[0006] Payload[16 0C 10 06 12 34]
+12-16 06:18:53.117  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x4], subcate[x0], cmd[209], cmd2[x0]
+12-16 06:18:53.117  1578  1673 V FactoryUtil: onReceive MCU param[x02][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x12][x34]...
+12-16 06:18:53.117  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x04][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x12][x34]...
+12-16 06:18:53.117  1578  1671 V FactoryEdu: procEduResCommand cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:18:53.117  1578  1671 V FactoryUtil: Res Buffer  bufSize[6]
+12-16 06:18:53.117  1578  1671 V FactoryUtil: [x16][x0C][x10][x06][x12][x34]
+12-16 06:18:53.117  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:18:53.598  1004  1556 E CM_SPI  : MSM->MCU Type[01] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:18:53.609  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:18:53.610  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x1], subcate[x0], cmd[17], cmd2[x0]
+12-16 06:18:53.610  1578  1673 V FactoryUtil: onReceive MCU param[x02][x11][x00], buf is NULL
+12-16 06:18:53.610  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x01][x11][x00], buf is NULL
+12-16 06:18:53.610  1578  1671 V FactoryEdu: procEduResCommand cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:18:53.610  1578  1671 V FactoryUtil: Res Buffer  buf is NULL
+12-16 06:18:53.610  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:18:54.965  1004  1546 E CommunicationManagerService: KICK DOG(357)
+12-16 06:18:55.576  1581 11142 I DiagManagerService: onWatchDog Kick
+12-16 06:18:55.577  1575 11143 V DebugManagerServiceImpl: DEBUG_IMPL_KICK_DOG
+12-16 06:18:55.688  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, 22] Cmd[02, 00] PayloadLen[000A] Payload[D9 9E 00 00 00 1B 00 00 00 21]
+12-16 06:18:55.750  1001  1709 V CRH     : RX_TIME_TO_KICK_DOG
+12-16 06:18:55.751  1001  1712 V CTH     : TXhandleMessage TX_TIME_TO_KICK_DOG
+12-16 06:18:55.751  1001  1572 V CANManagerService: perform HeartBeat()
+12-16 06:18:55.822  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 17 00 09 08 56 00 00 00 02 00 01 00 01 00 01 00 01]
+12-16 06:18:57.947   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:18:57.947   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:18:57.947   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:18:57.947   988  1686 E SPIClient_can: CB_2
+12-16 06:18:58.823  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 08 08 55 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:18:59.414  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
+12-16 06:19:00.864   991  1368 I LocationServer: droutput:lat:0.000000,lon:0.000000,alt:0.000000
+12-16 06:19:01.746  1581  1679 I DiagReadDTCHandler: checkFaultSettingCondition[false] PM[0] Vol[12.110000] bubTemp [36]
+12-16 06:19:01.818  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 19 00 08 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:02.957   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:19:02.957   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:19:02.957   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:19:02.957   988  1686 E SPIClient_can: CB_2
+12-16 06:19:03.598  1004  1556 E CM_SPI  : MSM->MCU Type[01] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:19:03.717  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[04, 00] Cmd[D1, 00] PayloadLen[0006] Payload[16 0C 10 06 13 02]
+12-16 06:19:03.718  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x4], subcate[x0], cmd[209], cmd2[x0]
+12-16 06:19:03.718  1578  1673 V FactoryUtil: onReceive MCU param[x02][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x13][x02]...
+12-16 06:19:03.718  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x04][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x13][x02]...
+12-16 06:19:03.718  1578  1671 V FactoryEdu: procEduResCommand cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:19:03.718  1578  1671 V FactoryUtil: Res Buffer  bufSize[6]
+12-16 06:19:03.718  1578  1671 V FactoryUtil: [x16][x0C][x10][x06][x13][x02]
+12-16 06:19:03.718  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:19:03.725  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:19:03.725  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x1], subcate[x0], cmd[17], cmd2[x0]
+12-16 06:19:03.725  1578  1673 V FactoryUtil: onReceive MCU param[x02][x11][x00], buf is NULL
+12-16 06:19:03.726  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x01][x11][x00], buf is NULL
+12-16 06:19:03.726  1578  1671 V FactoryEdu: procEduResCommand cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:19:03.726  1578  1671 V FactoryUtil: Res Buffer  buf is NULL
+12-16 06:19:03.726  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:19:04.820  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 09 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:04.965  1004  1546 E CommunicationManagerService: KICK DOG(358)
+12-16 06:19:05.576  1581 12322 I DiagManagerService: onWatchDog Kick
+12-16 06:19:05.578  1575 12323 V DebugManagerServiceImpl: DEBUG_IMPL_KICK_DOG
+12-16 06:19:05.697  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, 22] Cmd[02, 00] PayloadLen[000A] Payload[D9 9E 00 00 00 25 00 00 00 17]
+12-16 06:19:05.750  1001  1709 V CRH     : RX_TIME_TO_KICK_DOG
+12-16 06:19:05.751  1001  1572 V CANManagerService: perform HeartBeat()
+12-16 06:19:05.751  1001  1712 V CTH     : TXhandleMessage TX_TIME_TO_KICK_DOG
+12-16 06:19:06.016  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
+12-16 06:19:07.820  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 17 00 08 08 56 00 00 00 02 00 01 00 01 00 01 00 01]
+12-16 06:19:07.967   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:19:07.967   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:19:07.968   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:19:07.968   988  1686 E SPIClient_can: CB_2
+12-16 06:19:10.823  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 08 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:10.863   991  1368 I LocationServer: droutput:lat:0.000000,lon:0.000000,alt:0.000000
+12-16 06:19:11.750  1581  1679 I DiagReadDTCHandler: checkFaultSettingCondition[false] PM[0] Vol[12.110000] bubTemp [36]
+12-16 06:19:12.618  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
+12-16 06:19:12.979   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:19:12.979   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:19:12.980   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:19:12.980   988  1686 E SPIClient_can: CB_2
+12-16 06:19:13.604  1004  1556 E CM_SPI  : MSM->MCU Type[01] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:19:13.612  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:19:13.613  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x1], subcate[x0], cmd[17], cmd2[x0]
+12-16 06:19:13.613  1578  1673 V FactoryUtil: onReceive MCU param[x02][x11][x00], buf is NULL
+12-16 06:19:13.614  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x01][x11][x00], buf is NULL
+12-16 06:19:13.614  1578  1671 V FactoryEdu: procEduResCommand cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:19:13.614  1578  1671 V FactoryUtil: Res Buffer  buf is NULL
+12-16 06:19:13.614  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:19:13.818  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 19 00 08 08 54 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:14.316  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[04, 00] Cmd[D1, 00] PayloadLen[0006] Payload[16 0C 10 06 13 0D]
+12-16 06:19:14.317  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x4], subcate[x0], cmd[209], cmd2[x0]
+12-16 06:19:14.317  1578  1673 V FactoryUtil: onReceive MCU param[x02][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x13][x0D]...
+12-16 06:19:14.317  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x04][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x13][x0D]...
+12-16 06:19:14.317  1578  1671 V FactoryEdu: procEduResCommand cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:19:14.317  1578  1671 V FactoryUtil: Res Buffer  bufSize[6]
+12-16 06:19:14.317  1578  1671 V FactoryUtil: [x16][x0C][x10][x06][x13][x0D]
+12-16 06:19:14.317  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:19:14.965  1004  1546 E CommunicationManagerService: KICK DOG(359)
+12-16 06:19:15.576  1581 13494 I DiagManagerService: onWatchDog Kick
+12-16 06:19:15.577  1575 13495 V DebugManagerServiceImpl: DEBUG_IMPL_KICK_DOG
+12-16 06:19:15.698  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, 22] Cmd[02, 00] PayloadLen[000A] Payload[D9 9E 00 00 00 2F 00 00 00 0D]
+12-16 06:19:15.750  1001  1709 V CRH     : RX_TIME_TO_KICK_DOG
+12-16 06:19:15.750  1001  1572 V CANManagerService: perform HeartBeat()
+12-16 06:19:15.750  1001  1712 V CTH     : TXhandleMessage TX_TIME_TO_KICK_DOG
+12-16 06:19:16.820  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 07 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:17.987   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:19:17.987   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:19:17.987   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:19:17.987   988  1686 E SPIClient_can: CB_2
+12-16 06:19:19.214  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
+12-16 06:19:19.823  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 08 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:19.824 13983 13983 V ProcessState: Spawning new pooled thread, name=Binder_1
+12-16 06:19:19.825 13983 14001 V ProcessState: Spawning new pooled thread, name=Binder_2
+12-16 06:19:19.826 13983 13983 I sldd    : command : argv:rvm
+12-16 06:19:19.826 13983 13983 V sldd_rvm_app: getApplicationManagerInterface
+12-16 06:19:19.826 13983 13983 I sldd_cmd: rvm sendFakePM 7 
+12-16 06:19:19.826  1003  1566 V AppManager: onSendPost, dest = rvm
+12-16 06:19:19.827 23485 23485 E APP     : [onPostReceived] onPostReceived 50, 7
+12-16 06:19:19.827 23485 23485 D RVM_App : [onPostReceived:699] onPostReceived 50, 7
+12-16 06:19:20.191 14030 14030 V ProcessState: Spawning new pooled thread, name=Binder_1
+12-16 06:19:20.193 14030 14050 V ProcessState: Spawning new pooled thread, name=Binder_2
+12-16 06:19:20.194 14030 14030 I sldd    : command : argv:rvm
+12-16 06:19:20.194 14030 14030 V sldd_rvm_app: getApplicationManagerInterface
+12-16 06:19:20.194 14030 14030 I sldd_cmd: rvm sendFakePS 2 
+12-16 06:19:20.195  1003  1566 V AppManager: onSendPost, dest = rvm
+12-16 06:19:20.195 23485 23485 E APP     : [onPostReceived] onPostReceived 70, 2
+12-16 06:19:20.195 23485 23485 D RVM_App : [onPostReceived:699] onPostReceived 70, 2
+12-16 06:19:20.532 14081 14081 V ProcessState: Spawning new pooled thread, name=Binder_1
+12-16 06:19:20.534 14081 14097 V ProcessState: Spawning new pooled thread, name=Binder_2
+12-16 06:19:20.535 14081 14081 I sldd    : command : argv:rvm
+12-16 06:19:20.536 14081 14081 V sldd_rvm_app: getApplicationManagerInterface
+12-16 06:19:20.537  1003  1566 V AppManager: onSendPost, dest = rvm
+12-16 06:19:20.537 23485 23485 E APP     : [onPostReceived] onPostReceived 1, 2
+12-16 06:19:20.537 23485 23485 D RVM_App : [onPostReceived:699] onPostReceived 1, 2
+12-16 06:19:20.537 14081 14081 I sldd_cmd: rvm sendFakeSVTState 2 
+12-16 06:19:20.537 23485 23514 E APP     : [onReceiveFromSVT] Received Post Message of SVT Status,APPID = 1, SVTStatus = 2
+12-16 06:19:20.537 23485 23514 D RVM_Main: [onReceiveFromSVT:1241] Received Post Message of SVT Status,APPID = 1, SVTStatus = 2
+12-16 06:19:20.538   995  1539 I ConfigDbClient: ReadKv, Key:0x506ece40, token[478]
+12-16 06:19:20.538   995  1539 I CSE_ConfigDb: received msg from teleVM:3 0x506ece40, token:478
+12-16 06:19:20.539   995  1508 I CSE_ConfigDb: CONFIGDB_CB_CMD_READ_KV
+12-16 06:19:20.541   995  1508 I CSE_ConfigDb: read_data_db[lcf_table_remote] : key:0x506ece40 value:0 status:0 CseEr_GetErrorCode:0 sql_status:0 token:478
+12-16 06:19:20.541   995  1539 I ConfigDbClient: == wait for ReqKey:0x506ece40, Req token[478]
+12-16 06:19:20.541   995  1539 I ConfigDbClient: ==> [Req:Resp] table[lcf_table_remote] key[0x506ece40:0x506ece40], value[0], token[478:478]
+12-16 06:19:20.541   996  1525 I <VSM>VehicleStatusManagerService: Query kvDB (AppModeSVT)[lcf_table_remote:0x506ece40] success. value(0)
+12-16 06:19:20.541 23485 23514 E APP     : [onReceiveFromSVT] RVM application is disabled by SVT Activation
+12-16 06:19:20.541 23485 23514 D RVM_Main: [onReceiveFromSVT:1271] RVM application is disabled by SVT Activation
+12-16 06:19:20.541 23485 23514 V RVM_NS  : [IsEmpty:161] RVM_NGTPMessageQueue: isEmpty 
+12-16 06:19:20.541 23485 23514 V RVM_NS  : [SaveQueueToFile:325] RVM_NGTPMessageQueue:SaveQueueToFile !
+12-16 06:19:20.541 23485 23514 V RVM_NS  : [saveQueueData:249] RVM_NGTPMessageQueue:saveQueueData_Start
+12-16 06:19:20.541 23485 23514 V         : FileStore delete_file
+12-16 06:19:20.563 23485 23514 V         : FileStore delete_file [/data/apps/rvm/RVM_NGTP_Messsage_Queue.dat][0/500]
+12-16 06:19:20.563 23485 23514 V RVM_NS  : [IsEmpty:161] RVM_NGTPMessageQueue: isEmpty 
+12-16 06:19:20.563 23485 23514 V RVM_NS  : [saveQueueData:269] Save File Data is NULL !
+12-16 06:19:20.617  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[35, 00] Cmd[02, 00] PayloadLen[001C] Payload[5B 4D 43 55 5D 5B 53 74 69 6D 65 72 5D 20 31 20 68 6F 75 72 20 70 61 73 73 65 64 0A]
+12-16 06:19:20.617  1577  1654 E MCU     : [MCU][Stimer] 1 hour passed
+12-16 06:19:20.863   991  1368 I LocationServer: droutput:lat:0.000000,lon:0.000000,alt:0.000000
+12-16 06:19:21.753  1581  1679 I DiagReadDTCHandler: checkFaultSettingCondition[false] PM[0] Vol[12.110000] bubTemp [36]
+12-16 06:19:22.823  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 08 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:22.998   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:19:22.998   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:19:22.998   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:19:22.998   988  1686 E SPIClient_can: CB_2
+12-16 06:19:23.603  1004  1556 E CM_SPI  : MSM->MCU Type[01] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:19:23.611  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:19:23.611  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x1], subcate[x0], cmd[17], cmd2[x0]
+12-16 06:19:23.612  1578  1673 V FactoryUtil: onReceive MCU param[x02][x11][x00], buf is NULL
+12-16 06:19:23.612  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x01][x11][x00], buf is NULL
+12-16 06:19:23.612  1578  1671 V FactoryEdu: procEduResCommand cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:19:23.612  1578  1671 V FactoryUtil: Res Buffer  buf is NULL
+12-16 06:19:23.612  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:19:24.916  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[04, 00] Cmd[D1, 00] PayloadLen[0006] Payload[16 0C 10 06 13 18]
+12-16 06:19:24.917  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x4], subcate[x0], cmd[209], cmd2[x0]
+12-16 06:19:24.917  1578  1673 V FactoryUtil: onReceive MCU param[x02][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x13][x18]...
+12-16 06:19:24.918  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x04][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x13][x18]...
+12-16 06:19:24.918  1578  1671 V FactoryEdu: procEduResCommand cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:19:24.918  1578  1671 V FactoryUtil: Res Buffer  bufSize[6]
+12-16 06:19:24.918  1578  1671 V FactoryUtil: [x16][x0C][x10][x06][x13][x18]
+12-16 06:19:24.918  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:19:24.965  1004  1546 E CommunicationManagerService: KICK DOG(360)
+12-16 06:19:25.576  1581 14689 I DiagManagerService: onWatchDog Kick
+12-16 06:19:25.577  1575 14690 V DebugManagerServiceImpl: DEBUG_IMPL_KICK_DOG
+12-16 06:19:25.688  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, 22] Cmd[02, 00] PayloadLen[000A] Payload[D9 9E 00 00 00 39 00 00 00 03]
+12-16 06:19:25.743  1685  1705 E NetworkManagerService: rmnet_data0 | inbps=0 inpps=0 outbps=0 outpps=0
+12-16 06:19:25.743  1685  1705 E NetworkManagerService: rmnet_data1 | inbps=0 inpps=0 outbps=0 outpps=0
+12-16 06:19:25.750  1001  1709 V CRH     : RX_TIME_TO_KICK_DOG
+12-16 06:19:25.752  1001  1572 V CANManagerService: perform HeartBeat()
+12-16 06:19:25.752  1001  1712 V CTH     : TXhandleMessage TX_TIME_TO_KICK_DOG
+12-16 06:19:25.821  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
+12-16 06:19:25.823  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 17 00 08 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:28.009   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:19:28.010   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:19:28.010   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:19:28.010   988  1686 E SPIClient_can: CB_2
+12-16 06:19:28.826  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 08 08 55 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:30.862   991  1368 I LocationServer: droutput:lat:0.000000,lon:0.000000,alt:0.000000
+12-16 06:19:31.418  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[35, 00] Cmd[02, 00] PayloadLen[0021] Payload[42 55 42 20 44 54 43 33 3A 20 4F 50 45 4E 3A 31 20 53 79 73 48 57 3D 45 30 20 43 3A 32 39 20 31 0A]
+12-16 06:19:31.419  1577  1654 E MCU     : BUB DTC3: OPEN:1 SysHW=E0 C:29 1
+12-16 06:19:31.755  1581  1679 I DiagReadDTCHandler: checkFaultSettingCondition[false] PM[0] Vol[12.110000] bubTemp [36]
+12-16 06:19:31.821  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 16 00 01 08 55 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:32.417  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
+12-16 06:19:33.018   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:19:33.018   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:19:33.018   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:19:33.018   988  1686 E SPIClient_can: CB_2
+12-16 06:19:33.388  1580  1697 V PowerManagerImpl: processPowerManager : 22
+12-16 06:19:33.388  1580  1697 V PowerManagerImpl: processPowerManager: CMD_KEEPPOWER_AUTOREL
+12-16 06:19:33.388  1580  1697 E POWER   : KeepPower id:1 is auto-released module:4 ref:1 token:0x74002a20
+12-16 06:19:33.388  1580  1697 E PowerManagerImpl: KeepPower id:1 is auto-released module:4 ref:1 token:0x74002a20
+12-16 06:19:33.388  1580  1697 E PowerManagerImpl: releaseKeepPowerInternal id:1, mKeepPowerFlag 0x2, canstate
+12-16 06:19:33.388  1580  1697 I PowerManagerImpl: _startIdleTimer : 10 sec, isSleep 0
+12-16 06:19:33.390  1580  1697 I BootModeAPI: LGE read BootMode = factory
+12-16 06:19:33.390  1580  1697 I BootModeAPI: LGE BootMode set value = 0x2000000
+12-16 06:19:33.390  1580  1697 I PowerManagerImpl: startIdleTimer power mode is disable 
+12-16 06:19:33.390  1580  1697 E PowerManagerImpl: KeepPowerList : 
+12-16 06:19:33.390  1580  1697 I PowerManagerImpl: sendKeepPowerInfo2SystemMonitor(0x0)
+12-16 06:19:33.391   989  1520 I PSMClient: reportKeepPowerInfo : keeppowerinfo 0
+12-16 06:19:33.391   989  1520 D PSMClient: cse_il_psmclient_receive_from_televm called :15
+12-16 06:19:33.391   989  1520 D PSMClient: Packege Queued!
+12-16 06:19:33.391   989  1543 D PSMClient: psmclientCond Signaled!
+12-16 06:19:33.391   989  1543 D PSMClient: CB_CMD_RERORT_KEEPPOWER_INFO: Calling reportKeepPowerInfoToCSE(0x0)
+12-16 06:19:33.394   989  1543 D PSMClient: CB_CMD_RERORT_KEEPPOWER_INFO: Results from reportKeepPowerInfoToCSE = 0
+12-16 06:19:33.394 23484 15600 W RVC_timer: [TIMER_KEEPPOWER_RELEASE] 27 timer expired.
+12-16 06:19:33.394 23484 15600 E APP     : RVC] [TIMER_KEEPPOWER_RELEASE] 27 timer expired.
+12-16 06:19:33.394 23484 15600 W RVC     : KeepPower release all count:1 
+12-16 06:19:33.394 23484 15600 E APP     : RVC] KeepPower release all count:1 
+12-16 06:19:33.394 23484 15600 V KeepPower: KeepPower release module id: 4, keepPowerID:1
+12-16 06:19:33.394  1580  1580 E PowerManagerImpl: releaseKeepPowerInternal id:1, mKeepPowerFlag 0x0, canstate
+12-16 06:19:33.394  1580  1580 I PowerManagerImpl: _startIdleTimer : 10 sec, isSleep 0
+12-16 06:19:33.395  1580  1580 I BootModeAPI: LGE read BootMode = factory
+12-16 06:19:33.395  1580  1580 I BootModeAPI: LGE BootMode set value = 0x2000000
+12-16 06:19:33.395  1580  1580 I PowerManagerImpl: startIdleTimer power mode is disable 
+12-16 06:19:33.395  1580  1580 E PowerManagerImpl: KeepPowerList : 
+12-16 06:19:33.395  1580  1580 I PowerManagerImpl: sendKeepPowerInfo2SystemMonitor(0x0)
+12-16 06:19:33.396   989  1520 I PSMClient: reportKeepPowerInfo : keeppowerinfo 0
+12-16 06:19:33.396   989  1520 D PSMClient: cse_il_psmclient_receive_from_televm called :15
+12-16 06:19:33.399   989  1520 D PSMClient: Packege Queued!
+12-16 06:19:33.404   989  1543 D PSMClient: psmclientCond Signaled!
+12-16 06:19:33.404   989  1543 D PSMClient: CB_CMD_RERORT_KEEPPOWER_INFO: Calling reportKeepPowerInfoToCSE(0x0)
+12-16 06:19:33.405   989  1543 D PSMClient: CB_CMD_RERORT_KEEPPOWER_INFO: Results from reportKeepPowerInfoToCSE = 0
+12-16 06:19:33.605  1004  1556 E CM_SPI  : MSM->MCU Type[01] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:19:33.614  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[01, 00] Cmd[11, 00] PayloadLen[0000]
+12-16 06:19:33.614  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x1], subcate[x0], cmd[17], cmd2[x0]
+12-16 06:19:33.614  1578  1673 V FactoryUtil: onReceive MCU param[x02][x11][x00], buf is NULL
+12-16 06:19:33.614  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x01][x11][x00], buf is NULL
+12-16 06:19:33.614  1578  1671 V FactoryEdu: procEduResCommand cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:19:33.614  1578  1671 V FactoryUtil: Res Buffer  buf is NULL
+12-16 06:19:33.614  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x01], subCate[x00], cmd[x11], cmd2[x00]
+12-16 06:19:34.350  1744 15713 D PearlchainManager: storeLastLocation with success
+12-16 06:19:34.822  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 17 00 07 08 55 00 00 00 02 00 01 00 01 00 01 00 01]
+12-16 06:19:34.965  1004  1546 E CommunicationManagerService: KICK DOG(361)
+12-16 06:19:35.517  1004  1556 E CM_SPI  : MCU->MSM Type[02] Cat[04, 00] Cmd[D1, 00] PayloadLen[0006] Payload[16 0C 10 06 13 22]
+12-16 06:19:35.517  1578  1673 V FactoryImpl: onReceive MCU type[x2], cate[x4], subcate[x0], cmd[209], cmd2[x0]
+12-16 06:19:35.517  1578  1673 V FactoryUtil: onReceive MCU param[x02][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x13][x22]...
+12-16 06:19:35.517  1578  1671 V FactoryUtil: handleMessage FACTORY_IMPL_RES_FR_MCU_EDU param[x04][xD1][x00], bufSize[6:6]:[x16][x0C][x10][x06][x13][x22]...
+12-16 06:19:35.517  1578  1671 V FactoryEdu: procEduResCommand cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:19:35.517  1578  1671 V FactoryUtil: Res Buffer  bufSize[6]
+12-16 06:19:35.517  1578  1671 V FactoryUtil: [x16][x0C][x10][x06][x13][x22]
+12-16 06:19:35.517  1578  1671 V FactoryEdu: procEduResCommand cmd not define cate[x04], subCate[x00], cmd[xD1], cmd2[x00]
+12-16 06:19:35.576  1581 15868 I DiagManagerService: onWatchDog Kick
+12-16 06:19:35.577  1575 15869 V DebugManagerServiceImpl: DEBUG_IMPL_KICK_DOG
+12-16 06:19:35.689  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, 22] Cmd[02, 00] PayloadLen[000A] Payload[D9 9E 00 00 00 03 00 00 00 39]
+12-16 06:19:35.750  1001  1709 V CRH     : RX_TIME_TO_KICK_DOG
+12-16 06:19:35.750  1001  1712 V CTH     : TXhandleMessage TX_TIME_TO_KICK_DOG
+12-16 06:19:35.750  1001  1572 V CANManagerService: perform HeartBeat()
+12-16 06:19:37.818  1004  1556 E CM_SPI  : MCU->MSM Type[03] Cat[01, 00] Cmd[D0, 00] PayloadLen[0012] Payload[0D 18 00 0A 08 56 00 00 00 01 00 01 00 01 00 01 00 01]
+12-16 06:19:38.027   988  1595 E SPIClient_can: CL-ISPI_CSPB_OSC
+12-16 06:19:38.027   988  1595 E SPIClient_can: RCV CB Single(0), Group(0)
+12-16 06:19:38.028   988  1686 E SPIClient_can: MSG_CAN_BUS_STATE
+12-16 06:19:38.028   988  1686 E SPIClient_can: CB_2
+12-16 06:19:39.014  1004  1556 E CM_SPI  : MCU->MSM Type[01] Cat[05, DD] Cmd[05, 00] PayloadLen[0006] Payload[00 FE 00 00 00 24]
