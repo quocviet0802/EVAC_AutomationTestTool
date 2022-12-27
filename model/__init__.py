@@ -1,1 +1,1 @@
-__all__ = ["TestCase", "TestStep", "LogManager", "LogContent"]
+__all__ = ["TestCase", "TestStep", "TestStepResult", "TestCaseResult","LogManager", "LogContent"]

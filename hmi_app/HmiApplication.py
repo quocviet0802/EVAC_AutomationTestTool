@@ -1,5 +1,5 @@
 import AutoTestSlddService as service
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QAction
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QAction, QTreeWidgetItem
 from PyQt5.QtGui import QPalette, QColor, QFont, QStandardItemModel, QStandardItem
 from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect
 from PyQt5.QtWidgets import (
@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import (
     QHBoxLayout,
     QFormLayout,
     QTabWidget,
+    QListWidget,
     QWidget,
     QLineEdit,
     QFileDialog,
@@ -21,7 +22,12 @@ from PyQt5.QtWidgets import (
     QListView,
     QPushButton,
     QToolButton,
-    QTableView
+    QTableView,
+    QListWidgetItem,
+    QColumnView,
+    QTreeView,
+    QTreeWidget
+   
 )
 
 
@@ -121,8 +127,11 @@ class MainWindow(QMainWindow):
         self.TestStepsLabel_TabTest.setFont(common_font)
         self.TestStepsLabel_TabTest.setGeometry(QRect(15, 50, 100, 30))
         
-        self.TestSteplistView_TabTest = QListView(self.TestCaseGroup_TabTest)
+        self.TestSteplistView_TabTest = QTreeWidget(self.TestCaseGroup_TabTest)
         self.TestSteplistView_TabTest.setGeometry(QRect(80, 60, 720, 300))
+        self.TestSteplistView_TabTest.setColumnCount(4)
+        self.TestSteplistView_TabTest.setHeaderLabels(['Test Step', 'Type', 'Action', 'Log'])
+        self.TestSteplistView_TabTest.invisibleRootItem()
         
         self.ExceptionLabel_TabTest = QLabel(self.TestCaseGroup_TabTest)
         self.ExceptionLabel_TabTest.setText("Exception")
@@ -214,19 +223,61 @@ class MainWindow(QMainWindow):
             self.TextTestCasePathBrowser.setText(f"{file_path}")
             test_case = service.load_test_case(file_path)
             self.TextTestCaseName_TabTest.setText(test_case.test_case_name)
-            model = QStandardItemModel()
-            self.TestSteplistView_TabTest.setModel(model)
-            for item in test_case.test_steps:
-                print(test_case.test_steps[item].test_step_type)
-                row = QStandardItem(test_case.test_steps[item].test_step_type)
-                model.appendRow(row)
             
+            self.TestSteplistView_TabTest.clear()
 
-            # for item in test_case:
-            #     print(item)
+            for item in test_case.test_steps:
+                # tree_test_case.addChild(self.create_test_step_view(test_case.test_steps[item]))
+                self.create_test_step_view(item, test_case.test_steps[item], False)
+
+
+    def create_test_step_view(self, testcase, test_steps, isTestStepResult):
+        if isTestStepResult is False:
+            tree_test_case = QTreeWidgetItem(self.TestSteplistView_TabTest)
+            self.TestSteplistView_TabTest.addTopLevelItem(tree_test_case)
+            tree_test_case.setText(0, testcase)
+            tree_test_case.setText(1,test_steps.test_step_type)
+            tree_test_case.setText(2,test_steps.test_step_action)
+            tree_test_case.setText(3,test_steps.test_step_log[0])
+
+            if len(test_steps.test_step_log) > 1:
+                for index, item in enumerate(test_steps.test_step_log):
+                    if index == 0:
+                        continue
+                    test_step_log = QTreeWidgetItem(self.TestSteplistView_TabTest)
+                    test_step_log.setText(3,item)
+                    tree_test_case.addChild(test_step_log)
+        else:
+            tree_test_case = QTreeWidgetItem(self.TestSteplistView_TabTest)
+            self.TestSteplistView_TabTest.addTopLevelItem(tree_test_case)
+            tree_test_case.setText(0, testcase)
+            tree_test_case.setText(1,test_steps.type)
+            tree_test_case.setText(2,test_steps.action)        
+            tree_test_case.setText(3,test_steps.step_result[0][0])
+            
+            if test_steps.step_result[0][1] is True:
+                tree_test_case.setBackground(3, QColor("#ADE792"))
+            else:
+                tree_test_case.setBackground(3, QColor("#B2B2B2"))
+                
+            if len(test_steps.step_result) > 1:
+                for index, item in enumerate(test_steps.step_result):
+                    if index == 0:
+                        continue
+                    test_step_log = QTreeWidgetItem(self.TestSteplistView_TabTest)
+                    test_step_log.setText(3,item[0])
+                    if item[1] is True:
+                        test_step_log.setBackground(3, QColor("#ADE792"))
+                    else:
+                        test_step_log.setBackground(3, QColor("#B2B2B2"))
+                    tree_test_case.addChild(test_step_log)
+
 
     def event_run_test_case(self):
-        service.run()
+        test_result = service.run()
+        self.TestSteplistView_TabTest.clear()
+        for item in test_result.test_steps_result:
+            self.create_test_step_view(item, test_result.test_steps_result[item], True)
 
 
 def run_gui():

@@ -1,5 +1,7 @@
 from model.TestCase import TestCase
 from model.TestStep import TestStep
+from model.TestStepResult import TestStepResult
+from model.TestCaseResult import TestCaseResult
 from model.LogManager import LogManager
 from model.LogContent import LogContent
 import os
@@ -149,36 +151,57 @@ def clear_vdc_log():
 #     g_current_log_testing_path
 
 
+def set_test_step_result(test_step_info, step_result):
+    test_step_result = TestStepResult()
+    test_step_result.set_test_result_name(test_step_info.test_step_name)
+    test_step_result.set_test_result_type(test_step_info.test_step_type)
+    test_step_result.set_test_result_action(test_step_info.test_step_action)
+    test_step_result.set_test_result_log(step_result)
+    test_step_result.set_test_result_exceptions(test_step_info.test_step_exceptions)    
+    return test_step_result
+
+
 def handle_compare_test_case():
     current_log_path = get_vdc_log()
     load_log(current_log_path)
-    
+    load_log("D:\\WorkSpace\\AutoTestSLDD\\log_storage\\log_temp\\20221227_141132_Log.txt")
+    test_case_result = TestCaseResult()
+    test_step_result_dict = dict()
     for item in g_list_test_case:
         test_steps = g_list_test_case[item].test_steps
         for step in test_steps:
             if "sendcommand" in test_steps[step].test_step_type.lower():
                 result = compare_log(test_steps[step].test_step_log)
             else:
+                result = compare_log(test_steps[step].test_step_log)
                 pass
-    return result
+            test_step_result_dict[step] = set_test_step_result(test_steps[step], result)
+            
+        test_case_result.set_test_case_name(g_list_test_case[item].test_case_name)
+        test_case_result.set_test_steps_result(test_step_result_dict)
+        test_case_result.set_test_case_name(g_list_test_case[item].test_exceptions)
+    return test_case_result
 
 
 def search_log(expected_log):
-    # print(expected_log)
     index_log = 0
+    log_compare_result = list()
     for item in g_current_log["RVC"].log_content:
         if expected_log[index_log] in item.message:
+            log_compare_result.append((expected_log[index_log], True))
             index_log += 1
             if index_log >= len(expected_log):
                 break
-    if index_log >= len(expected_log):
-        return True
-    else:
-        return False
+    if index_log < len(expected_log):
+        for item in range(index_log, len(expected_log)):
+            log_compare_result.append((expected_log[index_log], False))
+    return log_compare_result
 
 def compare_log(expected_log):
     result = search_log(expected_log)
-    return result
+    return (result)
 
 def run():
-    print("ahihi")
+    run_test_case()
+    result = handle_compare_test_case()
+    return result
