@@ -1,5 +1,6 @@
+import AutoTestSlddService as service
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QAction
-from PyQt5.QtGui import QPalette, QColor, QFont
+from PyQt5.QtGui import QPalette, QColor, QFont, QStandardItemModel, QStandardItem
 from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect
 from PyQt5.QtWidgets import (
     QLabel,
@@ -91,12 +92,16 @@ class MainWindow(QMainWindow):
         
         self.TextTestCasePathBrowser = QLineEdit(self.InputTestCaseGroup)
         self.TextTestCasePathBrowser.setGeometry(QRect(80, 25, 270, 25))
-        self.TextTestCasePathBrowser.setMaxLength(4)
+        self.TextTestCasePathBrowser.setReadOnly(True)
         
+        self.FileDialog = QFileDialog(self.InputTestCaseGroup)
+        self.FileDialog.setFileMode(QFileDialog.AnyFile)
+
         self.OpenTestCaseFolderButton = QToolButton(self.InputTestCaseGroup)
         self.OpenTestCaseFolderButton.setText("...")
         self.OpenTestCaseFolderButton.setGeometry(QRect(360, 25, 25, 25))
-        
+        self.OpenTestCaseFolderButton.clicked.connect(self.event_tool_button)
+
         # TestCase
         self.TestCaseGroup_TabTest = QGroupBox(self.test_sldd_tab)
         self.TestCaseGroup_TabTest.setGeometry(QRect(15, 110, 825, 460))
@@ -107,7 +112,8 @@ class MainWindow(QMainWindow):
         self.TestCaseNameLabel_TabTest.setFont(common_font)
         self.TestCaseNameLabel_TabTest.setGeometry(QRect(15, 15, 100, 30))
         
-        self.TextTestCaseName_TabTest = QTextBrowser(self.TestCaseGroup_TabTest)
+        self.TextTestCaseName_TabTest = QLineEdit(self.TestCaseGroup_TabTest)
+        self.TextTestCaseName_TabTest.setReadOnly(True)
         self.TextTestCaseName_TabTest.setGeometry(QRect(80, 20, 720, 25))
         
         self.TestStepsLabel_TabTest = QLabel(self.TestCaseGroup_TabTest)
@@ -129,6 +135,7 @@ class MainWindow(QMainWindow):
         self.RunButton = QPushButton(self.test_sldd_tab)
         self.RunButton.setText("Run")
         self.RunButton.setGeometry(QRect(460, 40, 100, 25))
+        self.RunButton.clicked.connect(self.event_run_test_case)
         
         self.SaveLogButton = QPushButton(self.test_sldd_tab)
         self.SaveLogButton.setText("Save Log")
@@ -153,9 +160,8 @@ class MainWindow(QMainWindow):
         self.InputPathLabel.setFont(common_font)
         self.InputPathLabel.setText("Input Path")
         
-        self.TextPathBrowser = QLineEdit(self.InputGroup)
+        self.TextPathBrowser = QTextBrowser(self.InputGroup)
         self.TextPathBrowser.setGeometry(QRect(80, 25, 270, 25))
-        self.TextPathBrowser.setMaxLength(4)
         
         self.OpenFolderButton = QToolButton(self.InputGroup)
         self.OpenFolderButton.setText("...")
@@ -199,6 +205,28 @@ class MainWindow(QMainWindow):
         # self.EditTestCaseButton.setGeometry(QRect(240, 360, 91, 21))
         
         self.tabWidget.addTab(self.create_test_tab, "Create Test Case")
+
+
+    def event_tool_button(self):
+        # self.FileDialog.open
+        file_path = self.FileDialog.getOpenFileName(self, "", "", "Json (*.json)")[0]
+        if file_path:
+            self.TextTestCasePathBrowser.setText(f"{file_path}")
+            test_case = service.load_test_case(file_path)
+            self.TextTestCaseName_TabTest.setText(test_case.test_case_name)
+            model = QStandardItemModel()
+            self.TestSteplistView_TabTest.setModel(model)
+            for item in test_case.test_steps:
+                print(test_case.test_steps[item].test_step_type)
+                row = QStandardItem(test_case.test_steps[item].test_step_type)
+                model.appendRow(row)
+            
+
+            # for item in test_case:
+            #     print(item)
+
+    def event_run_test_case(self):
+        service.run()
 
 
 def run_gui():
