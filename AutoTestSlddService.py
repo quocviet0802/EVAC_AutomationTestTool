@@ -164,7 +164,7 @@ def set_test_step_result(test_step_info, step_result):
 def handle_compare_test_case():
     current_log_path = get_vdc_log()
     load_log(current_log_path)
-    load_log("D:\\WorkSpace\\AutoTestSLDD\\log_storage\\log_temp\\20221227_141132_Log.txt")
+    # load_log("D:\\WorkSpace\\AutoTestSLDD\\log_storage\\log_temp\\20221227_141132_Log.txt")
     test_case_result = TestCaseResult()
     test_step_result_dict = dict()
     for item in g_list_test_case:
@@ -201,7 +201,7 @@ def compare_log(expected_log):
     result = search_log(expected_log)
     return (result)
 
-def run():
-    run_test_case()
+def run(test_case):
+    run_test_case(g_list_test_case[test_case])
     result = handle_compare_test_case()
     return result

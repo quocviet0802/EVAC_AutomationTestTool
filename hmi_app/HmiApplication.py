@@ -274,7 +274,7 @@ class MainWindow(QMainWindow):
 
 
     def event_run_test_case(self):
-        test_result = service.run()
+        test_result = service.run(self.TextTestCaseName_TabTest.text())
         self.TestSteplistView_TabTest.clear()
         for item in test_result.test_steps_result:
             self.create_test_step_view(item, test_result.test_steps_result[item], True)
