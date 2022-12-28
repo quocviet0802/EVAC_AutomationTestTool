@@ -1,0 +1,99 @@
+{
+    "App" : "RVC",
+    "TestCase": "Remote Engine Start",
+    "TestSteps": {
+        "1": {
+            "Type" : "SendCommand",
+            "Action" : "sldd om set 4",
+            "Log": {
+                "1" : "setCurrState service:10 state:1",
+                "2" : "setCurrState service:4 state:1",
+                "3" : "sendNackMsgToTSP() remoteServiceType:4"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "2":{
+            "Type" : "Waiting",
+            "Action" : "5",
+            "Log": {
+                "1" : "Ahihi",
+                "2" : "Ahihi",
+                "3" : "Ahihi"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "3": {
+            "Type" : "SendCommand",
+            "Action" : "sldd remoteservice requestREON",
+            "Log": {
+                "1" : "setNGTPerrorCode() errorCode:12",
+                "2" : "save property:REONSuccess value:FAIL",
+                "3" : "Ahihi"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        }
+    },
+    "Exceptions": {
+        "Log" : {}
+    }
+}
+
+"
+Start	
+1.Precondition
+
+AppModeRVC enable
+PowerMode <= 4
+ccf additionalHeater = 0
+send sldd svt h_sendPostFakeSvtState remoteservice 1 0
+change pm to 0
+change pm to 7
+2. Test Steps :
+
+send CAN signal FuelLevelIndicatedQFHS = 3
+send CAN signal FuelLevelIndicatedHS = 100
+send CAN signal RemoteStartStatus = 0
+send CAN signal CrashStatusRcm = 0
+change pm to 0
+change pm to 9
+change pm to 0
+send sldd remoteservice requestReon
+PM change to 7
+
+receiveMessage_PM() 0 -> 7
+RemoteService Engine normally started. Crash status clear.
+Send CAN pre-check
+
+cmsCanRx FuelLevelIndicatedQFHS : 1
+receiveMessage_Can FuelLevelIndicatedQFHS(271) : 3 (3, 3)
+receiveMessage_Can FuelLevelIndicatedHS(270) : 100 (100, 100)
+setFuelLevelIndicated : 0 -> 1000
+receiveMessage_Can CrashStatusRCM(127) : 0 (0, 0)
+receiveMessage_Can RemoteStartStatusMS(704) : 0 (0, 0)
+PM change
+
+receiveMessage_PM() 7 -> 0
+saveProperty_FuelLevelIndicated fuelLevelIndicated:1000
+receiveMessage_PM() 0 -> 9
+receiveMessage_PM() 9 -> 0
+Receive TSP message → request RES
+
+receiveMessage_TSP(). serviceType: 4
+Check precondition
+
+RemoteService_PrereqCheck() serviceType:4
+Prerequisite check OK
+
+ RES_getFuelLevel fuelLevelIndicated:1000 ClimateControlResFuelLevelStartMin_dl:50 50
+[RES Prerequisite Success] Fuel level OK
+[RES Prerequisite Success] RES remaining runtime OK
+Handle RES
+
+RES_reqEngineStart()
+"

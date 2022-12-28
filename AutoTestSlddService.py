@@ -10,6 +10,7 @@ import json
 import subprocess
 import re
 import datetime
+import time
 
 
 g_list_test_case = dict()
@@ -19,6 +20,7 @@ g_current_log_testing_path = ""
 
 def set_test_step(name, data):
     test_step = TestStep()
+    test_step.set_app(name)
     test_step.set_test_step_name(name)
     test_step.set_test_step_type(data["Type"])
     test_step.set_test_step_action(data["Action"])
@@ -82,6 +84,7 @@ def run_test_case(testcase):
             pass
         elif "waiting" in test_steps[item].test_step_type.lower():
             # print(item, test_steps[item].test_step_action)
+            time.sleep(int(test_steps[item].test_step_action))
             pass
         else:
             pass

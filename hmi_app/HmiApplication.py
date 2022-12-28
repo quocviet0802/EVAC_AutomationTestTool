@@ -1,7 +1,7 @@
 import AutoTestSlddService as service
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QAction, QTreeWidgetItem
 from PyQt5.QtGui import QPalette, QColor, QFont, QStandardItemModel, QStandardItem
-from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect
+from PyQt5.QtCore import Qt, QCoreApplication, QMetaObject, QRect, QThreadPool
 from PyQt5.QtWidgets import (
     QLabel,
     QGridLayout,
@@ -38,6 +38,8 @@ common_font.setPointSize(10)
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
+        
+        self.threadpool = QThreadPool()
 
         self.setWindowTitle("Auto Test SLDD Application")
         self.setGeometry(300, 200, 900, 600)
@@ -153,6 +155,7 @@ class MainWindow(QMainWindow):
         self.ClearLogButton = QPushButton(self.test_sldd_tab)
         self.ClearLogButton.setText("Clear Log")
         self.ClearLogButton.setGeometry(QRect(740, 40, 100, 25))
+        self.RunButton.clicked.connect(self.event_clear_log)
         
         self.tabWidget.addTab(self.test_sldd_tab, "Auto Test")
     
@@ -272,13 +275,14 @@ class MainWindow(QMainWindow):
                         test_step_log.setBackground(3, QColor("#B2B2B2"))
                     tree_test_case.addChild(test_step_log)
 
-
     def event_run_test_case(self):
         test_result = service.run(self.TextTestCaseName_TabTest.text())
         self.TestSteplistView_TabTest.clear()
         for item in test_result.test_steps_result:
             self.create_test_step_view(item, test_result.test_steps_result[item], True)
 
+    def event_clear_log(self):
+        service.clear_vdc_log()
 
 def run_gui():
     application = QApplication([])
