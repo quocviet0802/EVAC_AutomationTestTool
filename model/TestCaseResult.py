@@ -1,8 +1,8 @@
 class TestCaseResult:
     def __init__(self):
-        self.name = ""
+        self.test_case_name = ""
         self.test_steps_result = ""
-        self.exceptions = ""
+        self.test_exceptions = ""
 
     def set_test_case_name(self, name):
         self.test_case_name = name

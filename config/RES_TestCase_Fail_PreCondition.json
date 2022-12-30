@@ -1,0 +1,124 @@
+{
+    "App" : "RVC",
+    "TestCase": "Remote Engine Start - Fail PreCondition",
+    "TestSteps": {
+        "1": {
+            "Type" : "SendCommand",
+            "Action" : "sldd svt h_sendPostFakeSvtState remoteservice 1 0",
+            "Log": {
+                "1" : ""
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "2":{
+            "Type" : "SendCommand",
+            "Action" : "sldd can setCanData -n PowerMode 0",
+            "Log": {
+                "1" : ""
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "3":{
+            "Type" : "SendCommand",
+            "Action" : "sldd can setCanData -n PowerMode 7",
+            "Log": {
+                "1" : "receiveMessage_PM() 0 -> 7"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "4":{
+            "Type" : "Waiting",
+            "Action" : "5",
+            "Log": {
+                "1" : ""
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "5":{
+            "Type" : "SendCommand",
+            "Action" : "sldd can setCanData -n FuelLevelIndicatedQFHS 3",
+            "Log": {
+                "1" : "receiveMessage_Can FuelLevelIndicatedQFHS(271) : 3 (3, 3)"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "6":{
+            "Type" : "SendCommand",
+            "Action" : "sldd can setCanData -n FuelLevelIndicatedHS 3",
+            "Log": {
+                "1" : "receiveMessage_Can FuelLevelIndicatedHS(270) : 3 (3, 3)"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "7":{
+            "Type" : "SendCommand",
+            "Action" : "sldd can setCanData -n CrashStatusRcm 1",
+            "Log": {
+                "1" : "receiveMessage_Can CrashStatusRCM(127) : 1 (1, 1)"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "8":{
+            "Type" : "SendCommand",
+            "Action" : "sldd can setCanData -n RemoteStartStatus 1",
+            "Log": {
+                "1" : "receiveMessage_Can RemoteStartStatusMS(704) : 1 (1, 1)"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "9":{
+            "Type" : "Waiting",
+            "Action" : "5",
+            "Log": {
+                "1" : ""
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "10":{
+            "Type" : "SendCommand",
+            "Action" : "sldd can setCanData -n PowerMode 0",
+            "Log": {
+                "1" : "receiveMessage_PM() 7 -> 0"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        },
+        "11":{
+            "Type" : "SendCommand",
+            "Action" : "sldd remoteservice requestREON",
+            "Log": {
+                "1" : "receiveMessage_TSP(). serviceType: 4",
+                "2" : "RemoteService_PrereqCheck() serviceType:4",
+                "3" : "[RES Prerequisite Fail] performing the RES",
+                "4" : "RES_getFuelLevel  fuelLevelIndicated:30 ClimateControlResFuelLevelStartMin_dl:50 50",
+                "5" : "[RES Prerequisite Fail]",
+                "6" : "requestHandler() serviceType: 4 Prerequisite fail"
+            },
+            "Exceptions" : {
+                "Log" : {}
+            }
+        }
+    },
+    "Exceptions": {
+        "Log" : {}
+    }
+}

@@ -155,7 +155,7 @@ class MainWindow(QMainWindow):
         self.ClearLogButton = QPushButton(self.test_sldd_tab)
         self.ClearLogButton.setText("Clear Log")
         self.ClearLogButton.setGeometry(QRect(740, 40, 100, 25))
-        self.RunButton.clicked.connect(self.event_clear_log)
+        self.ClearLogButton.clicked.connect(self.event_clear_log)
         
         self.tabWidget.addTab(self.test_sldd_tab, "Auto Test")
     
@@ -251,6 +251,8 @@ class MainWindow(QMainWindow):
                     test_step_log.setText(3,item)
                     tree_test_case.addChild(test_step_log)
         else:
+            # for item in test_steps.step_result:
+            #     print(item)
             tree_test_case = QTreeWidgetItem(self.TestSteplistView_TabTest)
             self.TestSteplistView_TabTest.addTopLevelItem(tree_test_case)
             tree_test_case.setText(0, testcase)
