@@ -1,1 +1,1 @@
-# AutoTestSLDD
+EVAC_AutomationTestTool
